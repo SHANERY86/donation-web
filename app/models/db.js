@@ -1,7 +1,7 @@
 "use strict";
 
-const env = require('dotenv');
-env.config();
+/*const env = require('dotenv');
+env.config(); */
 
 const Mongoose = require("mongoose");
 
