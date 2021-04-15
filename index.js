@@ -11,11 +11,11 @@ const env = require("dotenv");
 
 const dotenv = require("dotenv");
 
-/*const result = dotenv.config();
+const result = dotenv.config();
 if (result.error) {
   console.log(result.error.message);
   process.exit(1);
-} */
+} 
 
 const server = Hapi.server({
   port: process.env.PORT || 3000,
@@ -47,6 +47,7 @@ async function init() {
   });
   server.auth.default("session");
   server.route(require("./routes"));
+  server.route(require('./routes-api'));
   await server.start();
   console.log(`Server running at: ${server.info.uri}`);
 }

@@ -1,0 +1,21 @@
+{
+  "donationService": "http://localhost:3000",
+  "candidates": [
+    {
+      "firstName": "Lisa",
+      "lastName": "Simpson",
+      "office": "President"
+    },
+    {
+      "firstName": "Donald",
+      "lastName": "Simpson",
+      "office": "President"
+    }
+  ],
+  "newCandidate":
+  {
+    "firstName": "Barnie",
+    "lastName": "Grumble",
+    "office": "President"
+  }
+}
