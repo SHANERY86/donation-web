@@ -1,8 +1,6 @@
 "use strict";
 
 const axios = require("axios");
-const fixtures = require("./fixtures.json")
-const baseUrl = fixtures.donationService;
 
 class DonationService {
   constructor(baseUrl) {
@@ -45,7 +43,7 @@ class DonationService {
 
   async getUser(id) {
     try {
-      const response = await axios.get(this.baseUrl + "/api/user/" + id);
+      const response = await axios.get(this.baseUrl + "/api/users/" + id);
       return response.data;
     } catch (e) {
       return null;
@@ -54,6 +52,16 @@ class DonationService {
 
   async createUser(newUser) {
     const response = await axios.post(this.baseUrl + "/api/users", newUser);
+    return response.data;
+  }
+
+  async deleteAllUsers() {
+    const response = await axios.delete(this.baseUrl + "/api/users");
+    return response.data;
+  }
+
+  async deleteOneUser(id) {
+    const response = await axios.delete(this.baseUrl + "/api/users/" + id);
     return response.data;
   }
 
